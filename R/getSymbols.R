@@ -753,7 +753,8 @@ function(Metals,from=Sys.Date()-179,to=Sys.Date(),
                    function(x) {
                      paste(strsplit(x,'-')[[1]][1],base.currency,sep="/")
                    }))
-  getSymbols.oanda(Symbols=metals,from=from,to=to,auto.assign=auto.assign,
+  getSymbols.
+                          (Symbols=metals,from=from,to=to,auto.assign=auto.assign,
                    env=env,verbose=verbose,warning=warning,...) 
 }
 #}}}
@@ -1102,7 +1103,7 @@ function(Symbols,env,return.class='xts',
                            "&view=table",
                            "&base_currency_0=", currency.pair[2])
        # Fetch data (jsonlite::fromJSON will handle connection)
-       tbl <- jsonlite::fromJSON(oanda.URL, simplifyVector = FALSE)
+       tbl <- jsonlite::fromJSON(oanda.URL, simplifyVector = FALSE,...)
        Data <- tbl[[1]][[1]]$data
 
        # timestamps are ms since midnight 1970-01-01
