@@ -753,8 +753,7 @@ function(Metals,from=Sys.Date()-179,to=Sys.Date(),
                    function(x) {
                      paste(strsplit(x,'-')[[1]][1],base.currency,sep="/")
                    }))
-  getSymbols.
-                          (Symbols=metals,from=from,to=to,auto.assign=auto.assign,
+  getSymbols.oanda(Symbols=metals,from=from,to=to,auto.assign=auto.assign,
                    env=env,verbose=verbose,warning=warning,...) 
 }
 #}}}
